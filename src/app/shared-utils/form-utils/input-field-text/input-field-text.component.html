@@ -1,8 +1,8 @@
 <div class="form-group">
-  <label>{{labelName}}<small *ngIf="optional === true">(optional)</small></label>
-  <input id="textId" class="form-control" [(ngModel)]="firstnameT" name="formInput" #formInput="ngModel" [pattern]="inputType === 'text' ? '^[a-zA-Z]+$' : '^[0-9]+$'" minlength="{{minLength}}" maxlength="{{maxLength}}" required>
+  <label>{{labelName}}<small *ngIf="isRequired">(optional)</small></label>
+  <input class="form-control" [(ngModel)]="value" name="formInput" #formInput="ngModel" [pattern]="inputType === 'text' ? '^[a-zA-Z]+$' : '^[0-9]+$'" minlength="{{minLength}}" maxlength="{{maxLength}}" required>
   <div [hidden]="formInput.valid || formInput.pristine" class="alert alert-danger">
-    <div [hidden]="!formInput.hasError('required')" class="error">This field is required</div>
+    <div [hidden]="!formInput.hasError('required') || isRequired" class="error">This field is required</div>
     <div [hidden]="!formInput.hasError('minlength')" class="error">Min length should be {{minLength}}</div>
     <div [hidden]="!formInput.hasError('maxlength')" class="error">Max length should be {{maxlength}}</div>
     <div [hidden]="!formInput.hasError('pattern') || inputType === 'text'" class="error">Pattern should be number</div>

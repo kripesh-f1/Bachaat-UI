@@ -10,10 +10,9 @@ import {isNullOrUndefined} from 'util';
 export class InputFieldTextComponent implements OnInit {
   @Input() labelName: string;
   @Input() inputType: string;
-  @Input() optional?: boolean;
+  @Input() isRequired?: boolean;
   @Input() minLength?: number;
   @Input() maxLength?: number;
-  firstnameT: string;
   constructor() {
   }
   ngOnInit() {

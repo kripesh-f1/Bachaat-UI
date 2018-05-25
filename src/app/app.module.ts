@@ -8,7 +8,7 @@ import { InputFieldTextComponent} from './shared-utils/form-utils/input-field-te
 @NgModule({
   declarations: [
     AppComponent,
-    InputFieldTextComponent
+    InputFieldTextComponent,
   ],
   imports: [
     BrowserModule,
