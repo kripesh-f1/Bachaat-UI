@@ -37,7 +37,7 @@ describe('InputFieldEmailComponent', () => {
     expect(element.querySelector('input').value).toEqual('rowansiwakoti@gmail.com');
   });
 
-  it('should enter an invalid email address', () => {
+  it('should alert error message when an email address is invalid', () => {
     const element = fixture.debugElement.nativeElement;
     element.querySelector('input').value = 'rowansiwakoti@';
     fixture.detectChanges();
@@ -45,7 +45,7 @@ describe('InputFieldEmailComponent', () => {
     expect(div.innerHTML.includes('email@example.com')).toBeTruthy();
   });
 
-  it('should show required message if the input field is empty', () => {
+  it('should show required message when the input field is empty', () => {
     const element = fixture.debugElement.nativeElement;
     element.querySelector('input').value = '';
     fixture.detectChanges();

@@ -17,7 +17,7 @@ export const CUSTOM_INPUT_CONTROL_VALUE_ACCESSOR: any = {
   providers: [CUSTOM_INPUT_CONTROL_VALUE_ACCESSOR]
 })
 export class InputFieldEmailComponent implements OnInit, ControlValueAccessor {
-  @Input() isRequired: boolean;
+  @Input() isRequired?: boolean;
 
   // The internal data model
   private innerValue: any = '';
@@ -28,6 +28,7 @@ export class InputFieldEmailComponent implements OnInit, ControlValueAccessor {
   private onChangeCallback: (_: any) => void = noop;
 
   constructor() {
+    this.isRequired = true;
   }
 
   ngOnInit() {
