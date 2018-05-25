@@ -25,7 +25,7 @@ describe('InputFieldTextComponent', () => {
   it('should initialize input-text component', () => {
     expect(component).toBeTruthy();
   });
-  it('should show required error message if the input field value is empty', () => {
+  it('should show required error message when the input field value is empty', () => {
     const element = fixture.debugElement.nativeElement;
     component.inputType = 'text';
     fixture.detectChanges();
@@ -39,7 +39,7 @@ describe('InputFieldTextComponent', () => {
     });
     expect(element.querySelector('.error').innerText).toEqual('This field is required');
   });
-  it('should give minimum length error if the input field length is less that min-length', () => {
+  it('should give minimum length error when the input field length is less that min-length', () => {
     const compiled = fixture.debugElement.nativeElement;
     component.minLength = 3;
     component.inputType = 'text';
@@ -49,7 +49,7 @@ describe('InputFieldTextComponent', () => {
     const error = compiled.querySelector('.form-group .alert').children[1];
     expect(error.innerHTML.includes('Min length should be ')).toBeTruthy();
   });
-  it('should give maximum length error if the input field length is more that max-length', () => {
+  it('should give maximum length error when the input field length is more that max-length', () => {
     const compiled = fixture.debugElement.nativeElement;
     component.minLength = 5;
     component.inputType = 'text';
@@ -59,7 +59,7 @@ describe('InputFieldTextComponent', () => {
     const error = compiled.querySelector('.form-group .alert').children[2];
     expect(error.innerHTML.includes('Max length should be ')).toBeTruthy();
   });
-  it( 'should give number pattern required error if the input field value is text', () => {
+  it( 'should give number pattern required error when the input field value is text', () => {
     const compiled = fixture.debugElement.nativeElement;
     component.minLength = 5;
     component.inputType = 'number';
@@ -69,7 +69,7 @@ describe('InputFieldTextComponent', () => {
     const error = compiled.querySelector('.form-group .alert').children[3];
     expect(error.innerHTML.includes('Pattern should be number')).toBeTruthy();
   });
-  it('should give alphabet pattern required error if the input field value is number', () => {
+  it('should give alphabet pattern required error when the input field value is number', () => {
     const element = fixture.debugElement.nativeElement;
     component.inputType = 'text';
     fixture.detectChanges();
