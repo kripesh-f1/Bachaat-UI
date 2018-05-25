@@ -6,9 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-
-  onSubmit(value) {
-    console.log(value);
-  }
-
-  }
+  title = 'app';
+}
