@@ -15,7 +15,6 @@ export class InputFieldTextComponent implements OnInit {
   @Input() maxLength?: number;
   firstnameT: string;
   constructor() {
-    this.firstnameT = 'rabin';
   }
   ngOnInit() {
   }

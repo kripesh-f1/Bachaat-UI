@@ -2,27 +2,10 @@
   <label>{{labelName}}<small *ngIf="optional === true">(optional)</small></label>
   <input id="textId" class="form-control" [(ngModel)]="firstnameT" name="formInput" #formInput="ngModel" [pattern]="inputType === 'text' ? '^[a-zA-Z]+$' : '^[0-9]+$'" minlength="{{minLength}}" maxlength="{{maxLength}}" required>
   <div [hidden]="formInput.valid || formInput.pristine" class="alert alert-danger">
-    <div [hidden]="!formInput.errors?.required" class="min-error">This field is required</div>
-    <div [hidden]="!formInput.errors?.minlength" class="min-error">Min length should be {{minLength}}</div>
-    <div [hidden]="!formInput.errors?.maxlength" class="min-error">Max length should be {{maxlength}}</div>
+    <div [hidden]="!formInput.hasError('required')" class="error">This field is required</div>
+    <div [hidden]="!formInput.hasError('minlength')" class="error">Min length should be {{minLength}}</div>
+    <div [hidden]="!formInput.hasError('maxlength')" class="error">Max length should be {{maxlength}}</div>
+    <div [hidden]="!formInput.hasError('pattern') || inputType === 'text'" class="error">Pattern should be number</div>
+    <div [hidden]="!formInput.hasError('pattern') || inputType != 'text'" class="error">Pattern should be alphabet</div>
   </div>
-  <!--<div *ngIf="formInput.errors && formInput.dirty" class="alert alert-danger">-->
-    <!--<div [hidden] ="optional === true">-->
-      <!--<div *ngIf ="formInput.errors?.required">-->
-        <!--This field is required-->
-      <!--</div>-->
-    <!--</div>-->
-    <!--<div *ngIf="formInput.errors?.pattern && inputType === 'text'">-->
-      <!--Should only be Alphabet-->
-    <!--</div>-->
-    <!--<div *ngIf="formInput.errors?.pattern && inputType != 'text'">-->
-      <!--Should only be Number-->
-    <!--</div>-->
-    <!--<div class="min-error2" *ngIf="formInput.errors?.minlength">-->
-      <!--Min length should be {{minLength}}-->
-    <!--</div>-->
-    <!--<div *ngIf="formInput.errors?.maxlength" >-->
-      <!--Max length should not exceed more than {{maxLength}}-->
-    <!--</div>-->
-  <!--</div>-->
 </div>
