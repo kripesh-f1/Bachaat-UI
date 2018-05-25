@@ -1,6 +1,4 @@
 import { Component, OnInit, Input } from '@angular/core';
-import {FormGroup, Validators, FormBuilder} from '@angular/forms';
-import {isNullOrUndefined} from 'util';
 
 @Component({
   selector: 'app-input-field-text',
