@@ -1,4 +1,4 @@
-import {Component, forwardRef, Input, OnInit} from '@angular/core';
+import {Component, ElementRef, forwardRef, Input, OnInit, ViewChild} from '@angular/core';
 import {NgbDatepickerConfig} from '@ng-bootstrap/ng-bootstrap';
 import {ControlValueAccessor, NG_VALUE_ACCESSOR} from '@angular/forms';
 
@@ -19,6 +19,7 @@ export const CUSTOM_INPUT_CONTROL_VALUE_ACCESSOR: any = {
 })
 export class InputFieldDateComponent implements ControlValueAccessor {
   @Input() isRequired?: boolean;
+  @ViewChild('formInput') formInput;
 
   // The internal data model
   private innerValue: any = '';
