@@ -1,0 +1,25 @@
+<label class="checkbox-inline" *ngFor="let value of values">
+  <input type="checkbox"
+         value="{{value}}"
+         name="formControls"
+         [required]="isRequired"
+         #checkbox="ngModel"
+         [(ngModel)]="isActive">{{value | titlecase}} &nbsp;
+  <!--<div [hidden]="checkbox.valid || checkbox.pristine" class="alert alert-danger">-->
+    <!--<div [hidden]="!checkbox.hasError('required')">This field is required</div>-->
+  <!--</div>-->
+</label>
+
+<div *ngIf="value">
+  <label class="checkbox-inline">
+    <input type="checkbox" value="{{value}}"
+           name="formControl"
+           [required]="isRequired"
+           #checkbox="ngModel"
+           [(ngModel)]="isActive">
+    {{value | titlecase}}
+  </label>
+  <div [hidden]="checkbox.valid || checkbox.pristine" class="alert alert-danger">
+    <div [hidden]="!checkbox.hasError('required')">This field is required</div>
+  </div>
+</div>
