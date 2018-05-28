@@ -6,22 +6,18 @@ const noop = () => {
 
 export const CUSTOM_INPUT_CONTROL_VALUE_ACCESSOR: any = {
   provide: NG_VALUE_ACCESSOR,
-  useExisting: forwardRef(() => InputFieldTextComponent),
+  useExisting: forwardRef(() => InputFieldEmailComponent),
   multi: true
 };
 
 @Component({
-  selector: 'app-input-field-text',
-  templateUrl: './input-field-text.component.html',
-  styleUrls: ['./input-field-text.component.css'],
+  selector: 'app-input-field-email',
+  templateUrl: './input-field-email.component.html',
+  styleUrls: ['./input-field-email.component.css'],
   providers: [CUSTOM_INPUT_CONTROL_VALUE_ACCESSOR]
 })
-export class InputFieldTextComponent implements OnInit, ControlValueAccessor {
-  @Input() labelName: string;
-  @Input() inputType: string;
+export class InputFieldEmailComponent implements OnInit, ControlValueAccessor {
   @Input() isRequired?: boolean;
-  @Input() minLength?: number;
-  @Input() maxLength?: number;
 
   // The internal data model
   private innerValue: any = '';
