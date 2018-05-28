@@ -1,0 +1,21 @@
+<div class="form-group">
+  <div class="input-group">
+    <input class="form-control"
+           placeholder="yyyy-mm-dd"
+           [required]="isRequired"
+           name="datePicker"
+           #formInput="ngModel"
+           [(ngModel)]="value"
+           ngbDatepicker
+           #datePicker="ngbDatepicker">
+    <div class="input-group-append">
+      <button class="btn btn-outline-secondary" (click)="datePicker.toggle()" type="button">
+        <img src="../../../../assets/img/calendar-icon.svg"/>
+      </button>
+    </div>
+  </div>
+  <div [hidden]="formInput.valid || formInput.pristine" class="alert alert-danger">
+    <div [hidden]="!formInput.hasError('required')">This field is required</div>
+    <div [hidden]="formInput.status && !formInput.value">Invalid pattern</div>
+  </div>
+</div>
