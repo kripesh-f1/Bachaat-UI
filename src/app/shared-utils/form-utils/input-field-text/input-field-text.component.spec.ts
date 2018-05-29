@@ -39,7 +39,7 @@ describe('InputFieldTextComponent', () => {
     });
     expect(element.querySelector('.error').innerText).toEqual('This field is required');
   });
-  it('should give minimum length error when the input field length is less that min-length', () => {
+  it('should give minimum length error when the input field length is less than min-length', () => {
     const compiled = fixture.debugElement.nativeElement;
     component.minLength = 3;
     component.inputType = 'text';
@@ -49,7 +49,7 @@ describe('InputFieldTextComponent', () => {
     const error = compiled.querySelector('.form-group .alert').children[1];
     expect(error.innerHTML.includes('Min length should be ')).toBeTruthy();
   });
-  it('should give maximum length error when the input field length is more that max-length', () => {
+  it('should give maximum length error when the input field length is more than max-length', () => {
     const compiled = fixture.debugElement.nativeElement;
     component.minLength = 5;
     component.inputType = 'text';

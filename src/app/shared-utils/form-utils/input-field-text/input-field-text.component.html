@@ -1,5 +1,7 @@
 <div class="form-group">
-  <input class="form-control" [(ngModel)]="value" name="formInput" #formInput="ngModel"
+  <input class="form-control" name="formInput"
+         #formInput="ngModel"
+         [(ngModel)]="value"
          [pattern]="inputType === 'text' ? '^[a-zA-Z]+$' : '^[0-9]+$'"
          minlength="{{minLength}}"
          maxlength="{{maxLength}}"
@@ -9,6 +11,6 @@
     <div [hidden]="!formInput.hasError('minlength')" class="error">Min length should be {{minLength}}</div>
     <div [hidden]="!formInput.hasError('maxlength')" class="error">Max length should be {{maxlength}}</div>
     <div [hidden]="!formInput.hasError('pattern') || inputType === 'text'" class="error">Pattern should be number</div>
-    <div [hidden]="!formInput.hasError('pattern') || inputType != 'text'" class="error">Pattern should be alphabet</div>
+    <div [hidden]="!formInput.hasError('pattern') || inputType !== 'text'" class="error">Pattern should be alphabet</div>
   </div>
 </div>
