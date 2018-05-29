@@ -9,6 +9,7 @@ import { InputFieldEmailComponent } from './shared-utils/form-utils/input-field-
 import { InputFieldTextComponent} from './shared-utils/form-utils/input-field-text/input-field-text.component';
 import { InputFieldPasswordComponent } from './shared-utils/form-utils/input-field-password/input-field-password.component';
 import {InputFieldDateComponent} from './shared-utils/form-utils/input-field-date/input-field-date.component';
+import { InputFieldRadioComponent } from './shared-utils/form-utils/input-field-radio/input-field-radio.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import {InputFieldDateComponent} from './shared-utils/form-utils/input-field-dat
     InputFieldPasswordComponent,
     InputFieldEmailComponent,
     InputFieldTextComponent,
+    InputFieldRadioComponent,
   ],
   imports: [
     BrowserModule,
