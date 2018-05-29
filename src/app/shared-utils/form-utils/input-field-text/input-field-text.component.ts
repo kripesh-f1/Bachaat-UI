@@ -17,7 +17,6 @@ export const CUSTOM_INPUT_CONTROL_VALUE_ACCESSOR: any = {
   providers: [CUSTOM_INPUT_CONTROL_VALUE_ACCESSOR]
 })
 export class InputFieldTextComponent implements OnInit, ControlValueAccessor {
-  @Input() labelName: string;
   @Input() inputType: string;
   @Input() isRequired?: boolean;
   @Input() minLength?: number;
