@@ -1,0 +1,3 @@
+<div [ngStyle]="{'display':viewType}" *ngIf="data">
+  <input type="checkbox" value="{{data}}" [(ngModel)]="value" name="checkbox" #formInput="ngModel">{{data | titlecase}}
+</div>
