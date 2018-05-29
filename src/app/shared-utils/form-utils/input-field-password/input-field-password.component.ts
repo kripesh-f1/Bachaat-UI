@@ -20,9 +20,7 @@ export class InputFieldPasswordComponent implements OnInit, ControlValueAccessor
   @Input() isRequired: boolean;
   @Input() minLength: number;
   @Input() maxLength: number;
-  @ViewChild('formInput') formControl;
-  value: string;
-
+  @ViewChild('formInput') formInput;
   // The internal data model
   private innerValue: any = '';
 
@@ -30,6 +28,7 @@ export class InputFieldPasswordComponent implements OnInit, ControlValueAccessor
   // by the Control Value Accessor
   private onTouchedCallback: () => void = noop;
   private onChangeCallback: (_: any) => void = noop;
+
   constructor() {
     this.isRequired = true;
   }
