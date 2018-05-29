@@ -1,4 +1,5 @@
-import {Component, forwardRef, Input, OnInit} from '@angular/core';
+import {Component, ElementRef, forwardRef, Input, OnInit, ViewChild} from '@angular/core';
+import {NgbDatepickerConfig} from '@ng-bootstrap/ng-bootstrap';
 import {ControlValueAccessor, NG_VALUE_ACCESSOR} from '@angular/forms';
 
 const noop = () => {
@@ -6,22 +7,19 @@ const noop = () => {
 
 export const CUSTOM_INPUT_CONTROL_VALUE_ACCESSOR: any = {
   provide: NG_VALUE_ACCESSOR,
-  useExisting: forwardRef(() => InputFieldTextComponent),
+  useExisting: forwardRef(() => InputFieldDateComponent),
   multi: true
 };
 
 @Component({
-  selector: 'app-input-field-text',
-  templateUrl: './input-field-text.component.html',
-  styleUrls: ['./input-field-text.component.css'],
-  providers: [CUSTOM_INPUT_CONTROL_VALUE_ACCESSOR]
+  selector: 'app-input-field-date',
+  templateUrl: './input-field-date.component.html',
+  styleUrls: ['./input-field-date.component.css'],
+  providers: [NgbDatepickerConfig, CUSTOM_INPUT_CONTROL_VALUE_ACCESSOR]
 })
-export class InputFieldTextComponent implements OnInit, ControlValueAccessor {
-  @Input() labelName: string;
-  @Input() inputType: string;
+export class InputFieldDateComponent implements ControlValueAccessor {
   @Input() isRequired?: boolean;
-  @Input() minLength?: number;
-  @Input() maxLength?: number;
+  @ViewChild('formInput') formInput;
 
   // The internal data model
   private innerValue: any = '';
@@ -31,11 +29,15 @@ export class InputFieldTextComponent implements OnInit, ControlValueAccessor {
   private onTouchedCallback: () => void = noop;
   private onChangeCallback: (_: any) => void = noop;
 
-  constructor() {
+  constructor(config: NgbDatepickerConfig) {
     this.isRequired = true;
-  }
 
-  ngOnInit() {
+    // customize default values of datepickers used by this component tree
+    config.minDate = {year: 1900, month: 1, day: 1};
+    config.maxDate = {year: 2099, month: 12, day: 31};
+
+    // days that don't belong to current month are not visible
+    config.outsideDays = 'hidden';
   }
 
   // get accessor
