@@ -1,4 +1,4 @@
-import {Component, forwardRef, Input, OnInit} from '@angular/core';
+import {Component, forwardRef, OnInit, Input, ViewChild} from '@angular/core';
 import {ControlValueAccessor, NG_VALUE_ACCESSOR} from '@angular/forms';
 
 const noop = () => {
@@ -20,6 +20,7 @@ export class InputFieldPasswordComponent implements OnInit, ControlValueAccessor
   @Input() isRequired: boolean;
   @Input() minLength: number;
   @Input() maxLength: number;
+  @ViewChild('formInput') formInput;
   // The internal data model
   private innerValue: any = '';
 
@@ -64,5 +65,4 @@ export class InputFieldPasswordComponent implements OnInit, ControlValueAccessor
   registerOnTouched(fn: any) {
     this.onTouchedCallback = fn;
   }
-
 }
