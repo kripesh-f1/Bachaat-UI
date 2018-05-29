@@ -4,8 +4,7 @@
            #inputForm="ngModel"
            name="{{radioGroupName}}"
            [(ngModel)]="value"
-           value="{{radioValue}}"
-           [required]="isRequired"/>
+           value="{{radioValue}}"/>
     {{radioValue | titlecase}}
     <span *ngIf="viewType === 'block'"><br></span>
   </span>
