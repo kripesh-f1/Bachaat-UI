@@ -1,0 +1,14 @@
+<div class="container">
+  <br/>
+  <div class="row">
+    <div class="col-sm-3 mx-auto">
+      <form #myForm="ngForm">
+        <app-label [labelName]="'Username'"></app-label>
+        <app-input-field-text [inputType]="'text'"></app-input-field-text>
+        <app-label [labelName]="'Password'"></app-label>
+        <app-input-field-password [minLength]="8" [maxLength]="30"></app-input-field-password>
+        <app-button [buttonType]="'submit'" [buttonValue]="'Login'" [buttonClass]="'btn btn-primary'"></app-button>
+      </form>
+    </div>
+  </div>
+</div>
