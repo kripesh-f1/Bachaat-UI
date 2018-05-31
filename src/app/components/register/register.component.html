@@ -1,0 +1,31 @@
+<div class="container">
+  <br/>
+  <div class="row">
+    <div class="col-sm-6 mx-auto">
+      <form #form="ngForm">
+        <app-label [labelName]="'First Name'"></app-label>
+        <app-input-field-text name="firstName" [(ngModel)]="firstName" [placeholderText]="'Your first name'" [minLength]="3" [maxLength]="25"></app-input-field-text>
+
+        <app-label [labelName]="'Middle Name'" [isRequired]="false"></app-label>
+        <app-input-field-text name="middleName" [(ngModel)]="middleName" [placeholderText]="'Your middle name'" [minLength]="1" [maxLength]="25" [isRequired]="false"></app-input-field-text>
+
+        <app-label [labelName]="'Last Name'"></app-label>
+        <app-input-field-text name="lastName" [(ngModel)]="lastName" [placeholderText]="'Your last name'" [minLength]="3" [maxLength]="25"></app-input-field-text>
+
+        <app-label [labelName]="'Password'"></app-label>
+        <app-input-field-password name="password" [(ngModel)]="password" [placeholderText]="'Your password'" [minLength]="8" [maxLength]="30"></app-input-field-password>
+
+        <app-label [labelName]="'Email Address'"></app-label>
+        <app-input-field-email name="emailAddress" [(ngModel)]="emailAddress" [placeholderText]="'Your email address'"></app-input-field-email>
+
+        <app-label [labelName]="'Address'"></app-label>
+        <app-input-field-text name="address" [(ngModel)]="address" [placeholderText]="'Your address'" [minLength]="3" [maxLength]="25"></app-input-field-text>
+
+        <app-label [labelName]="'Mobile Number'"></app-label>
+        <app-input-field-text [inputType]="'number'" name="mobileNumber" [(ngModel)]="mobileNumber" [placeholderText]="'Your mobile number'" [minLength]="7" [maxLength]="10"></app-input-field-text>
+
+        <app-button [buttonType]="'submit'" [buttonValue]="'Register'" [buttonClass]="'btn btn-primary'"></app-button>
+      </form>
+    </div>
+  </div>
+</div>
