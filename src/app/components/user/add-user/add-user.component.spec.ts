@@ -1,7 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { AddUserComponent } from './add-user.component';
-import {UserService} from '../../../services/user.service';
+import {UserService} from '../../../services/user/user.service';
 import {FormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import {ButtonComponent} from '../../../shared-utils/form-utils/button/button.component';

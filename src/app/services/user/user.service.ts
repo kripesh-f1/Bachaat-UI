@@ -5,7 +5,7 @@ import { catchError, tap } from 'rxjs/operators';
 import { of } from 'rxjs/observable/of';
 import { HttpHeaders } from '@angular/common/http';
 
-import { User } from '../models/user.model';
+import { User } from '../../models/user.model';
 
 @Injectable()
 export class UserService {

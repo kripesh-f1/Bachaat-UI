@@ -2,7 +2,7 @@ import {async, ComponentFixture, inject, TestBed} from '@angular/core/testing';
 import { FormsModule} from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
-import { UserService } from '../../services/user.service';
+import { UserService } from '../../services/user/user.service';
 import { UserComponent } from './user.component';
 import { LabelComponent } from '../../shared-utils/form-utils/label/label.component';
 import { InputFieldPasswordComponent } from '../../shared-utils/form-utils/input-field-password/input-field-password.component';
