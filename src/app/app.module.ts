@@ -19,6 +19,7 @@ import {RegisterComponent} from './components/register/register.component';
 import {AppRoutingModule} from './app-routing.module';
 import {UserComponent} from './components/user/user.component';
 import {UserService} from './services/user.service';
+import { AddUserComponent } from './components/user/add-user/add-user.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import {UserService} from './services/user.service';
     InputFieldCheckboxComponent,
     LoginComponent,
     RegisterComponent,
-    UserComponent
+    UserComponent,
+    AddUserComponent
   ],
   imports: [
     BrowserModule,
