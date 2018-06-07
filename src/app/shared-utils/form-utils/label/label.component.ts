@@ -8,7 +8,9 @@ import {Component, Input, OnInit} from '@angular/core';
 export class LabelComponent implements OnInit {
   @Input() labelName: string;
   @Input() isRequired: boolean;
-  constructor() { }
+  constructor() {
+    this.isRequired = true;
+  }
 
   ngOnInit() {
   }

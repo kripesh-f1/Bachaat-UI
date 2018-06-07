@@ -1,5 +1,8 @@
 import {Component, OnInit} from '@angular/core';
+import {User} from '../../shared-utils/models/user';
+import {MessageService} from '../../shared-utils/services/message.service';
 import {Router} from '@angular/router';
+import {UserService} from '../../shared-utils/services/user-service/user.service';
 
 @Component({
   selector: 'app-login',
@@ -8,15 +11,30 @@ import {Router} from '@angular/router';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private router:Router) {
+  user: User;
+
+  constructor(public userService: UserService, public messageService: MessageService, private router: Router) {
+    this.user = new User();
   }
 
   ngOnInit() {
   }
 
-  onSubmit(value): void {
-    if(value.username === 'admin' && value.password === 'admin'){
-      this.router.navigate(['user']);
-    }
+  onSubmit(value: User): void {
+    this.userService.validateUser(value).subscribe(success => {
+      this.messageService.setMessage(success.message);
+      this.router.navigate(
+        ['dashboard']
+      )
+      console.log(success.message);
+    }, err => {
+      this.messageService.setMessage(err.error.message);
+      console.log(err.error.message);
+    });
+  }
+
+  userRegister(): void {
+    this.messageService.setMessage('');
+    this.router.navigate(['/register']);
   }
 }

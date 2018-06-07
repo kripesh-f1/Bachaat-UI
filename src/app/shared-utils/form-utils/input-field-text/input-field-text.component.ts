@@ -18,10 +18,6 @@ export const CUSTOM_INPUT_CONTROL_VALUE_ACCESSOR: any = {
 })
 export class InputFieldTextComponent implements OnInit, ControlValueAccessor {
   @Input() inputType: string;
-  @Input() isRequired?: boolean;
-  @Input() minLength?: number;
-  @Input() maxLength?: number;
-
   // The internal data model
   private innerValue: any = '';
 
@@ -31,7 +27,6 @@ export class InputFieldTextComponent implements OnInit, ControlValueAccessor {
   private onChangeCallback: (_: any) => void = noop;
 
   constructor() {
-    this.isRequired = true;
   }
 
   ngOnInit() {
