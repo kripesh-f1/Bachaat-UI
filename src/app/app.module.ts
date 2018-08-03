@@ -17,6 +17,9 @@ import {InputFieldCheckboxComponent} from './shared-utils/form-utils/input-field
 import {LoginComponent} from './components/login/login.component';
 import {RegisterComponent} from './components/register/register.component';
 import {AppRoutingModule} from './app-routing.module';
+import {UserComponent} from './components/user/user.component';
+import {UserService} from './services/user/user.service';
+import { AddUserComponent } from './components/user/add-user/add-user.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +33,9 @@ import {AppRoutingModule} from './app-routing.module';
     InputFieldRadioComponent,
     InputFieldCheckboxComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    UserComponent,
+    AddUserComponent
   ],
   imports: [
     BrowserModule,
@@ -42,7 +47,7 @@ import {AppRoutingModule} from './app-routing.module';
   exports: [
     RouterModule,
   ],
-  providers: [],
+  providers: [UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule {
